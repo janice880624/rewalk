@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pic/logo.png">
+    <link rel="apple-touch-icon" href="pic/_logo.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
         
@@ -72,12 +74,9 @@
             <!-- 桌面導航 -->
             <div class="hidden md:flex gap-8 text-[16px] font-black uppercase tracking-widest text-slate-400">
                 <button onclick="showView('home')" id="nav-home" class="hover:text-[#001858] transition">首頁</button>
-                <button onclick="showView('browse')" id="nav-browse" class="hover:text-[#001858] transition">瀏覽</button>
-                <button onclick="showView('post')" id="nav-post" class="hover:text-[#001858] transition">刊登</button>
+                <button onclick="showView('browse')" id="nav-browse" class="hover:text-[#001858] transition">瀏覽鞋款</button>
+                <button onclick="showView('post')" id="nav-post" class="hover:text-[#001858] transition">我要刊登</button>
             </div>
-
-            <button onclick="showView('post')" class="hidden md:block bg-[#f582ae] text-[#001858] px-6 py-2.5 rounded-full font-black text-sm uppercase shadow-lg hover:scale-105 active:scale-95 transition">+ 刊登需求</button>
-            
 
         </div>
     </nav>
@@ -120,7 +119,13 @@
                     <p class="text-sm md:text-xl text-[#8bd3dd] mb-8 md:mb-12 tracking-widest opacity-80 max-w-2xl mx-auto font-bold px-4">
                         媒合左右腳不同尺寸的需求，實踐綠色永續生活。<br class="hidden md:block" />讓每一隻落單的鞋，都能找到共舞的伴。
                     </p>
-                    <button onclick="showView('browse')" class="bg-[#f582ae] text-[#001858] px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-md md:text-lg tracking-widest hover:scale-105 transition shadow-2xl active:scale-95">進入大廳瀏覽</button>
+                    <!-- 強化版：首頁免責聲明 -->
+                    <div class="mb-12 inline-flex items-center gap-3 bg-amber-500/20 border border-amber-500/40 backdrop-blur-md px-5 py-2.5 rounded-full text-[11px] md:text-sm text-amber-100 tracking-widest uppercase font-black">
+                        <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400"></i>
+                        本平台僅供資訊媒合，交易風險請雙方自行承擔
+                    </div>
+
+                    <button onclick="showView('browse')" class="block mx-auto bg-[#f582ae] text-[#001858] px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-md md:text-lg tracking-widest hover:scale-105 transition shadow-2xl active:scale-95">進入大廳瀏覽</button>
                 </div>
             </div>
 
@@ -166,7 +171,7 @@
                         <div class="mb-4 md:mb-6 h-16 md:h-20 flex items-center justify-center">
                             <div class="flex flex-col items-center">
                                 <span class="text-4xl md:text-6xl font-black text-[#f3d2c1] opacity-50" style="font-family: 'Shizuru';">01</span>
-                                <p class="font-black text-[#001858] tracking-widest text-sm md:text-lg">拍下您的鞋子照片</p>
+                                <p class="font-black text-[#001858] tracking-widest text-sm md:text-lg" style="padding-top: 20px; padding-bottom: 20px;">拍下您的鞋子照片</p>
                             </div>
                         </div>
                         <div class="w-full aspect-video md:aspect-[4/3] bg-white rounded-[2rem] overflow-hidden shadow-xl border-4 border-white transition-transform md:group-hover:-rotate-2 md:group-hover:scale-105 duration-500">
@@ -179,7 +184,7 @@
                         <div class="mb-4 md:mb-6 h-16 md:h-20 flex items-center justify-center">
                             <div class="flex flex-col items-center">
                                 <span class="text-4xl md:text-6xl font-black text-[#8bd3dd] opacity-50" style="font-family: 'Shizuru';">02</span>
-                                <p class="font-black text-[#001858] tracking-widest text-sm md:text-lg">刊登尺寸與需求</p>
+                                <p class="font-black text-[#001858] tracking-widest text-sm md:text-lg" style="padding-top: 20px; padding-bottom: 20px;">刊登尺寸與需求</p>
                             </div>
                         </div>
                         <div class="w-full aspect-video md:aspect-[4/3] bg-white rounded-[2rem] overflow-hidden shadow-xl border-4 border-white transition-transform md:group-hover:rotate-1 md:group-hover:scale-105 duration-500">
@@ -192,7 +197,7 @@
                         <div class="mb-4 md:mb-6 h-16 md:h-20 flex items-center justify-center">
                             <div class="flex flex-col items-center">
                                 <span class="text-4xl md:text-6xl font-black text-[#f582ae] opacity-50" style="font-family: 'Shizuru';">03</span>
-                                <p class="font-black text-[#001858] tracking-widest text-sm md:text-lg">私訊媒合並寄送</p>
+                                <p class="font-black text-[#001858] tracking-widest text-sm md:text-lg" style="padding-top: 20px; padding-bottom: 20px;">私訊媒合並寄送</p>
                             </div>
                         </div>
                         <div class="w-full aspect-video md:aspect-[4/3] bg-white rounded-[2rem] overflow-hidden shadow-xl border-4 border-white transition-transform md:group-hover:rotate-2 md:group-hover:scale-105 duration-500">
@@ -348,8 +353,21 @@
             <img src="pic/logo.png" alt="Footer Logo" class="w-full h-full object-contain mix-blend-multiply" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2729/2729013.png'">
         </div>
         <span class="text-xl md:text-2xl font-black italic uppercase text-[#001858] tracking-tighter" style="font-family: 'Shizuru', cursive;">ReWalk</span>
+        <!-- 免責聲明文字區 -->
+        <div class="max-w-2xl mx-auto mt-12 px-6">
+            <div class="bg-white/50 border-2 border-[#001858]/5 rounded-[2rem] p-8 md:p-10 text-left">
+                <h4 class="flex items-center gap-2 text-[12px] font-black text-[#001858] uppercase tracking-[0.2em] mb-4">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-[#f582ae]"></i>
+                    平台免責聲明 / Legal Disclaimer
+                </h4>
+                <div class="h-0.5 w-10 bg-[#f582ae] mb-6"></div>
+                <p class="text-[11px] md:text-[12px] font-bold text-[#001858] opacity-50 leading-loose italic">
+                    ReWalk 僅提供一個資源共享與媒合平台。使用者經由本平台所進行之任何通訊、實體物品交換、買賣或服務，均為使用者間之私人行為。本平台並不介入、擔保或負責任何交易過程。對於使用者提供之資訊真實性、物品品質、交易糾紛或後續產生之任何損害與法律責任，本平台不負任何法律或賠償責任。建議使用者於實體面交或寄送前，務必先行確認對方身份與物品狀況。
+                </p>
+            </div>
+        </div>
         <p class="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] opacity-30 italic mt-6 px-4">
-            © 2026 ReWalk - Sustainability Powered by Firebase
+            Copyright © 2026 Janice. All rights reserved.
         </p>
     </footer>
 
